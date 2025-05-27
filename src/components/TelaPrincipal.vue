@@ -1,43 +1,53 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    </div>
+  <div class="principal">
+    <h2>Bem-vindo, {{ usuario.nome }}!</h2>
+    <p>Nível de acesso: {{ usuario.nivel }}</p>
+
+    <router-link to="/form-categoria/Categorias">
+      <button>Manutenção de Categorias</button>
+    </router-link>
+
+    <router-link to="/form-usuario/Usuario">
+      <button v-if="usuario.nivel === 'adm'">Cadastro de Usuários</button>
+    </router-link>
+
+    <router-link to="/admin">
+      <button v-if="usuario.nivel === 'adm'">Painel Administrativo</button>
+    </router-link>
+
+    <router-link to="/">
+      <button @click="logout">Sair</button>
+    </router-link>
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: 'TelaPrincipal',
-  props: {
-    msg: String
-  },
-  data(){
-    return {id:0, titulo:"",formOn:false, 
-    anuncios:[]}
-  },
-  methods:{
-    mostrarForm(flag)
-    {
-      this.formOn=flag;
-    },
-    carregarDados(){
-      axios.get("http://localhost:8080/apis/anuncio")
-      .then(result=>{
-        this.anuncios=result.data
-      })
-      .catch(error=>{alert(error)})
-    },
-    ordenarNome(){
-      this.anuncios.sort((a,b)=>a.titulo.localeCompare(b.titulo));
+  props: ['msg'],
+  data() {
+    return {
+      usuario: { nome: '', nivel: '' }
     }
   },
-  mounted(){
-    this.carregarDados();
+  mounted() {
+    const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+    if (!usuario) {
+      this.$router.push('/');
+    } else {
+      this.usuario = usuario;
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('usuarioLogado');
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+button {
+  display: block; margin: 10px; padding: 10px;
+}
 </style>
