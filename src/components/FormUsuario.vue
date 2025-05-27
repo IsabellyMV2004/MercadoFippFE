@@ -14,8 +14,8 @@
 
         <label for="nivel">Nível de Acesso</label>
         <select id="nivel" v-model="nivel">
-          <option value="adm">Administrador</option>
-          <option value="vendedor">Vendedor/Comprador</option>
+          <option value="1">Administrador</option>
+          <option value="2">Vendedor/Comprador</option>
         </select>
 
         <input type="submit" value="Confirmar">

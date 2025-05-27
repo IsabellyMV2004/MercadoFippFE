@@ -32,7 +32,9 @@
           <td>{{ a.titulo }}</td>
           <td>{{ a.data }}</td>
           <td>{{ a.descricao }}</td>
+          <td>{{ a.preco }}</td>
           <td>{{ a.categoria.nome }}</td>
+          <td>{{ a.usuario.nome }}</td>
           <td><button @click="apagarAnuncio(a.id)">Excluir</button></td>
         </tr>
       </tbody>
