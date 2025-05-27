@@ -9,7 +9,7 @@
 <script>
 import FormCategoria from './components/FormCategoria.vue'
 import FormUsuario from './components/FormUsuario.vue'
-import TelaPrincipal from './components/TelaPrincipal.vue';
+import TelaPrincipal from './components/TelaADM.vue';
 
 export default {
   name: 'App',

@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
 import Login from './components/Login.vue'
-import TelaPrincipal from './components/TelaPrincipal.vue'
+import TelaPrincipal from './components/TelaADM.vue'
 import FormCategoria from './components/FormCategoria.vue'
 import FormUsuario from './components/FormUsuario.vue'
 import AdminDashboard from './components/AdminDashboard.vue'
