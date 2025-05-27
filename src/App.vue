@@ -9,12 +9,12 @@
 <script>
 import FormCategoria from './components/FormCategoria.vue'
 import FormUsuario from './components/FormUsuario.vue'
-import TelaPrincipal from './components/TelaADM.vue';
+import TelaADM from './components/TelaADM.vue';
 
 export default {
   name: 'App',
   components: {
-    FormCategoria, FormUsuario, TelaPrincipal
+    FormCategoria, FormUsuario, TelaADM
   }
 }
 </script>

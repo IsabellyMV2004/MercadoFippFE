@@ -69,7 +69,7 @@
                       Remember me
                     </label>
                   </div>
-                  <a href="#!">Forgot password?</a>
+                  <a href="#!">Esqueceu a senha?</a>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-lg btn-block">
@@ -88,7 +88,7 @@
                   href="#!"
                   role="button"
                 >
-                  <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                  <i class="fab fa-facebook-f me-2"></i>Continuar com Facebook
                 </a>
                 <a
                   class="btn btn-primary btn-lg btn-block"
@@ -96,7 +96,7 @@
                   href="#!"
                   role="button"
                 >
-                  <i class="fab fa-twitter me-2"></i>Continue with Twitter
+                  <i class="fab fa-twitter me-2"></i>Continuar com Twitter
                 </a>
               </form>
 
@@ -128,7 +128,7 @@ export default {
           const usuario = usuarios.find(u => u.nome === this.nome && u.senha === this.senha);
           if (usuario) {
             localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-            this.$router.push('/tela-principal/' + usuario.nome);
+            this.$router.push('/tela-adm/' + usuario.nome);
           } else {
             this.erro = 'Usuário ou senha inválidos.';
           }
